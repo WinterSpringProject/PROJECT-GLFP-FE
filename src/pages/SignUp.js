@@ -1,40 +1,19 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
+// import Link from '@material-ui/core/Link';
+import { Link } from 'react-router-dom';
+
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import ComputerIcon from '@material-ui/icons/Computer';
 import { TextField, MenuItem } from "@material-ui/core"
-import {createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import purple from '@material-ui/core/colors/purple';
 import '../components/css/Button.css';
 import '../components/css/Section.css';
 
 
 
-const accent = purple['A200']; // #e040fb
-
-
-// function CopyRight() {
-//   return (
-//     <Typography variant="body2" color="textSecondary" align="center">
-//       {'Copyright © '}
-//       <Link color="beige" to='/'>
-//         GLFP
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -56,26 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#f44336'
-    },
-    secondary: {
-      main: '#3f51b5'
-    },
-    error: {
-      main: '#009688'
-    },
-    text: {
-      primary: '#e91e63',
-      secondary: '#2196f3',
-      disabled: '#4caf50',
-      hint: '#ffc107',
-      myTextColor : '#039be5'
-    }
-  },
-})
+
 
 export default function SignUp() {
   const classes = useStyles();
@@ -136,6 +96,16 @@ export default function SignUp() {
                 name="ID"
                 autoComplete="ID"
               />
+            </Grid><Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="nickname"
+                label="닉네임를 입력하세요"
+                name="nickname"
+                autoComplete="nickname"
+              />
             </Grid>
             <Grid item xs={12}>
               <TextField
@@ -161,12 +131,18 @@ export default function SignUp() {
                 autoComplete="current-password"
               />
             </Grid>
-            {/* <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="약관에 대하여 동의하나요?"
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="email"
+                label="학교 이메일을 입력해주세요(@sogang.ac.kr)"
+                type="email"
+                id="email"
               />
-            </Grid> */}
+            </Grid>
+            
           </Grid>
           <Grid container spacing={2}>
           <Grid item xs={6}>
@@ -177,7 +153,7 @@ export default function SignUp() {
             color="#ffff"
             className={classes.submit}
           >
-            가입하기
+            메일을 보내 인증하기
           </Button>
           </Grid>
           <Grid item xs={6}>
@@ -195,7 +171,8 @@ export default function SignUp() {
             
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link to='/Log-in'
+              href="#" variant="body2">
                 아이디가 있으면 로그인
               </Link>
             </Grid>

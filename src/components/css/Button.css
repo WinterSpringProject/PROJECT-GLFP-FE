@@ -41,3 +41,29 @@
     transition: all  0.3s ease-out;
     transition: 250ms;
 }
+
+.ChatBox{
+  border:1px solid black;
+  border-radius: 1rem;
+  color: #fff;
+  height:200%;
+  width: 50%;
+ display: flex;
+ justify-content: center;
+ 
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  padding : 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Box{
+  width:40%;
+  height: 80%;
+  border:1px solid black;
+  border-radius: 1rem;
+}

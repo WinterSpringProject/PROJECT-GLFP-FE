@@ -1,5 +1,4 @@
 import React from 'react';
-import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
@@ -11,14 +10,13 @@ import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
+
 import { makeStyles } from '@material-ui/core/styles';
-import ComputerIcon from '@material-ui/icons/Computer';
-import '../components/css/Navbar.css';
+import glfpimg from "../components/image/glfp.png";
 
 
-//           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+//    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
 
 
 const useStyles = makeStyles((theme) => ({   /* 이런 식으로 arrow function 사용할 것 */
@@ -63,9 +61,8 @@ export default function Homepage() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Avatar className={classes.pink}>
-            <ComputerIcon />
-          </Avatar>
+        {/* <Avatar alt="Adelle Charles" src={glfpimg} className={classes.avatar}/> */}
+
           <Typography component="h1" variant="h4">
             GLFP
           </Typography>
@@ -100,20 +97,22 @@ export default function Homepage() {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
+              color="#ffff"
               className={classes.submit}
             >
               로그인
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link to ='/Forgot' 
+                href="#" variant="body2">
                   비밀번호를 잊으셨나요?
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
-                  {"처음이신가요? 회원가입하기"}
+                <Link to='/Sign-up'
+                href="#" variant="body2">
+                  "처음이신가요? 회원가입하기"
                 </Link>
               </Grid>
             </Grid>
